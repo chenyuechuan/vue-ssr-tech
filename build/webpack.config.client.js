@@ -44,8 +44,8 @@ if (isDev) {
         devtool: '#cheap-module-eval-source-map',
         devServer,
         plugins: defaultPlugins.concat([
-            new Webpack.HotModuleReplacementPlugin(),
-            new Webpack.NoEmitOnErrorsPlugin()
+            new Webpack.HotModuleReplacementPlugin()
+            // new Webpack.NoEmitOnErrorsPlugin()
         ])
     })
 } else {
@@ -72,14 +72,20 @@ if (isDev) {
                 }
             ]
         },
+        optimization: {
+            splitChunks: {
+                chunks: 'all'
+            },
+            runtimeChunk: true
+        },
         plugins: defaultPlugins.concat([
-            new ExtractTextPlugin('style.[contentHash:8].css'),
-            new Webpack.optimize.CommonsChunkPlugin({
-                name: 'vendor'
-            }),
-            new Webpack.optimize.CommonsChunkPlugin({
-                name: 'runtime'
-            })
+            new ExtractTextPlugin('style.[contentHash:8].css')
+            // new Webpack.optimize.CommonsChunkPlugin({
+            //     name: 'vendor'
+            // }),
+            // new Webpack.optimize.CommonsChunkPlugin({
+            //     name: 'runtime'
+            // })
         ])
     })
 }
