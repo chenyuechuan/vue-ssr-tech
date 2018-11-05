@@ -11,17 +11,17 @@
 
 <script>
     export default {
-      props: {
-        todo: {
-          type: Object,
-          require: true
+        props: {
+            todo: {
+                type: Object,
+                require: true
+            }
+        },
+        methods: {
+            deleteTodo () {
+                this.$emit('del', this.todo.id)
+            }
         }
-      },
-      methods: {
-        deleteTodo () {
-          this.$emit('del', this.todo.id)
-        }
-      }
     }
 </script>
 
