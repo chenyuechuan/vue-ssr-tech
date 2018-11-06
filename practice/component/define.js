@@ -8,7 +8,7 @@ const compoent = {
             validator (value) {
                 return typeof value === 'boolean'
             }
-        },xiaoxiao
+        },
         propOne: String
     },
     template: `
