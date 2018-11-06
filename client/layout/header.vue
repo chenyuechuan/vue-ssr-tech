@@ -5,18 +5,6 @@
 </template>
 
 <script>
-    export default {
-        name: 'header',
-        computed: {
-            $style () {
-                return {
-                    mainHeader: {
-
-                    }
-                }
-            }
-        }
-    }
 </script>
 
 <style lang="stylus" module>
