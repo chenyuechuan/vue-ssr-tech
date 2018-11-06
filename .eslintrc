@@ -3,5 +3,12 @@
   "plugins": [
     "html"
   ],
-  "parser": "babel-eslint" //剖析器
+  "parser": "babel-eslint", //剖析器
+  "rules": {
+    "indent": [
+      "error",
+      4
+    ],
+    "no-new": "off"
+  }
 }

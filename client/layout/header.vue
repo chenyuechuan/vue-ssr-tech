@@ -6,16 +6,16 @@
 
 <script>
     export default {
-      name: 'header',
-      computed: {
-        $style () {
-          return {
-            mainHeader: {
+        name: 'header',
+        computed: {
+            $style () {
+                return {
+                    mainHeader: {
 
+                    }
+                }
             }
-          }
         }
-      }
     }
 </script>
 
