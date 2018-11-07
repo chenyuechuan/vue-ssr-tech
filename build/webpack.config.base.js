@@ -1,13 +1,14 @@
 const path = require('path')
-const Webpack = require('webpack')
+// const Webpack = require('webpack')
 const isDev = process.env.NODE_ENV === 'development'
 const createVueLoaderOptions = require('./vue-loader.config')
 const config = {
-    target: "web",
+    target: 'web',
     entry: path.join(__dirname, '../client/index.js'),
     output: {
-        filename: "bundle.[hash:8].js",
-        path: path.join(__dirname, '../dist')
+        filename: 'bundle.[hash:8].js',
+        path: path.join(__dirname, '../dist'),
+        publicPath: '/public/'
     },
     module: {
         rules: [

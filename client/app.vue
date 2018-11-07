@@ -2,7 +2,11 @@
     <div id="app">
         <div id="cover"></div>
         <VHeader/>
-        <Todo/>
+        <router-link :to="{name: 'app'}">app</router-link>
+        <router-link to="/login">login</router-link>
+        <transition name="fade">
+            <router-view/>
+        </transition>
         <Footer/>
     </div>
 </template>

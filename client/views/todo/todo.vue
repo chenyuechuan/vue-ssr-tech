@@ -12,6 +12,7 @@
             :key="todo.id"
             @del="deleteTodo"/>
         <Tabs @clearAllCompleted="clearAllCompleted" @toggle="toggleFilter" :todos="todos" :filter="filter"/>
+        <router-view></router-view>
     </section>
 </template>
 
