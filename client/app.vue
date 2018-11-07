@@ -16,7 +16,10 @@ import VHeader from './layout/header.vue'
 import Footer from './layout/footer.jsx'
 import Todo from './views/todo/todo.vue'
 export default {
-    components: {VHeader, Footer, Todo}
+    components: {VHeader, Footer, Todo},
+    mounted () {
+        console.log(this.$store.state)
+    }
 }
 </script>
 
