@@ -5,6 +5,7 @@ const Webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
+const VueClientPlugin = require('vue-server-renderer/server-plugin')
 
 const devServer = {
     port: 8002,
@@ -27,7 +28,8 @@ const defaultPlugins = [
     }),
     new HTMLPlugin({
         template: path.join(__dirname, './template.html')
-    })
+    }),
+    new VueClientPlugin()
 ]
 
 let config
