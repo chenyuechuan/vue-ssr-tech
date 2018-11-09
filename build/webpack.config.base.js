@@ -8,7 +8,7 @@ const config = {
     output: {
         filename: 'bundle.[hash:8].js',
         path: path.join(__dirname, '../dist'),
-        publicPath: '/public/'
+        publicPath: 'http://127.0.0.1:8002/public/'
     },
     module: {
         rules: [
@@ -37,7 +37,7 @@ const config = {
                 use: [
                     {
                         loader: 'url-loader',
-                        options:{
+                        options: {
                             limit: 1024,
                             name: 'resoursce/[path][name].[hash:8].[ext]'
                         }

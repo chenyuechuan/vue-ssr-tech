@@ -1,5 +1,5 @@
 <template>
-    <header :class="$style.mainHeader">
+    <header class="main-header">
         <h1>CTodo</h1>
     </header>
 </template>
@@ -7,18 +7,11 @@
 <script>
     export default {
         computed: {
-            $style () {
-                return {
-                    mainHeader: {
-
-                    }
-                }
-            }
         }
     }
 </script>
 
-<style lang="stylus" module>
+<style lang="stylus">
 .main-header{
     text-align center
     h1{

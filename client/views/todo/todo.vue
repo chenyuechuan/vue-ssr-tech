@@ -19,7 +19,6 @@
 <script>
 import Item from './item.vue'
 import Tabs from './tabs.vue'
-const {alert} = window
 let id = 0
 export default {
     data () {
@@ -54,7 +53,7 @@ export default {
                 })
                 e.target.value = ''
             } else {
-                alert('内容不能为空 !-_-')
+                console.log('内容不能为空 !-_-')
             }
         },
         deleteTodo (id) {

@@ -15,7 +15,7 @@ config = merge(baseConfig, {
         filename: 'server-entry.js',
         path: path.join(__dirname, '../server-build')
     },
-    enternals: Object.keys(require('../package.json').dependencies),
+    externals: Object.keys(require('../package.json').dependencies),
     module: {
         rules: [
             {

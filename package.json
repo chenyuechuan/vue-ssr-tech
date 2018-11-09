@@ -12,7 +12,8 @@
     "lint": "eslint --ext .js --ext .jsx --ext .vue client/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/",
     "precommit": "npm run lint-fix",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js"
+    "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "dev:server": "cross-env NODE_ENV=development node server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -57,10 +58,11 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "ejs": "^2.5.7",
     "koa": "^2.4.1",
     "koa-router": "^7.4.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
-    "vue-server-renderer": "^2.5.13"
+    "vue-server-renderer": "^2.5.17"
   }
 }
