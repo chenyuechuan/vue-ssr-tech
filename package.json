@@ -6,14 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.config.client.js",
-    "build": "npm run clean && npm run build:client",
+    "build:server": "cross-env NODE_ENV=production webpack --config build/webpack.config.server.js",
+    "build": "npm run clean && npm run build:client && npm run build:server",
     "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js",
-    "clean": "rimraf dist",
+    "clean": "rimraf public && rimraf server-build",
     "lint": "eslint --ext .js --ext .jsx --ext .vue client/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/",
     "precommit": "npm run lint-fix",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
-    "dev:server": "cross-env NODE_ENV=development node server/server.js"
+    "dev:server": "nodemon server/server.js",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "start": "cross-env NODE_ENV=production node server/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +30,7 @@
     "babel-plugin-syntax-jsx": "6.18.0",
     "babel-plugin-transform-vue-jsx": "3.5.0",
     "babel-preset-env": "1.6.1",
+    "concurrently": "^3.5.1",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "eslint": "^4.16.0",
@@ -41,7 +45,9 @@
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
+    "koa-send": "^4.1.2",
     "memory-fs": "^0.4.1",
+    "nodemon": "^1.14.12",
     "postcss-loader": "2.0.9",
     "rimraf": "^2.6.2",
     "style-loader": "^0.19.1",
@@ -62,6 +68,7 @@
     "koa": "^2.4.1",
     "koa-router": "^7.4.0",
     "vue": "^2.5.17",
+    "vue-meta": "^1.4.3",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.17"
   }

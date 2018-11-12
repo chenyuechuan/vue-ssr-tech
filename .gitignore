@@ -4,7 +4,8 @@
 /node_modules
 
 # production
-/dist
+/public
+/server-build
 
 # misc
 .DS_Store

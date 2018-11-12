@@ -16,6 +16,9 @@ import VHeader from './layout/header.vue'
 import Footer from './layout/footer.jsx'
 import Todo from './views/todo/todo.vue'
 export default {
+    metaInfo: {
+        title: 'OldRiver App'
+    },
     components: {VHeader, Footer, Todo},
     mounted () {
         console.log(this.$store.state)

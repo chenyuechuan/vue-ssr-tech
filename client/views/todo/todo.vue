@@ -21,6 +21,9 @@ import Item from './item.vue'
 import Tabs from './tabs.vue'
 let id = 0
 export default {
+    metaInfo: {
+        title: 'OldRiver todo App'
+    },
     data () {
         return {
             todos: [

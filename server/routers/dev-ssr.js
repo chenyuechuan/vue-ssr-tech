@@ -37,7 +37,6 @@ const handleSSR = async (ctx) => {
     const clientManifestResp = await axios.get('http://127.0.0.1:8002/public/vue-ssr-client-manifest.json')
 
     const clientManifest = clientManifestResp.data
-
     const template = fs.readFileSync(
         path.join(__dirname, '../server.template.ejs'),
         'utf-8'
